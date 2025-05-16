@@ -179,7 +179,7 @@
 import Link from "next/link"
 import { siteConfig } from "@/config/site"
 import { Button, buttonVariants } from "@/components/ui/button"
-import { MoveUpRight, MessageSquarePlus, ArrowRight, Keyboard, Search, Users } from "lucide-react"
+import { MoveUpRight, MessageSquarePlus, ArrowRight, Keyboard, Search, Users, StoreIcon } from "lucide-react"
 import Image from "next/image"
 import { useState, useEffect } from 'react'
 import { motion } from 'framer-motion'
@@ -481,7 +481,7 @@ export default function IndexPage() {
                   rel="noreferrer"
                   className={cn(buttonVariants({ variant: "outline", size: "lg" }))}
                 >
-                  <MessageSquarePlus className="mr-2 size-4" />
+                  <StoreIcon className="mr-2 size-4" />
                   Go to Store
                 </Link>
               </div>
