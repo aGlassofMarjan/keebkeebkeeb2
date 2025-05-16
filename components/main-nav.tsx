@@ -120,14 +120,14 @@ const NavigationMenuDemo = () => {
               <li className="row-span-3">
                 <NavigationMenuLink asChild>
                   <a
-                    className="from-muted/50 to-muted hover:bg-accent flex size-full select-none flex-col justify-end rounded-md bg-gradient-to-b p-6 no-underline outline-none focus:shadow-md"
+                    className="flex size-full select-none flex-col justify-end rounded-md bg-gradient-to-b from-muted/50 to-muted p-6 no-underline outline-none hover:bg-accent focus:shadow-md"
                     href="/keyboards"
                   >
                     <Icons.logo className="size-6" />
                     <div className="mb-2 mt-4 text-lg font-medium">
                       Search between our staff pick
                     </div>
-                    <p className="text-muted-foreground text-sm leading-tight">
+                    <p className="text-sm leading-tight text-muted-foreground">
                       Greets your new keyboard.
                     </p>
                   </a>
@@ -152,14 +152,14 @@ const NavigationMenuDemo = () => {
               <li className="row-span-3">
                 <NavigationMenuLink asChild>
                   <a
-                    className="from-muted/50 to-muted hover:bg-accent flex size-full select-none flex-col justify-end rounded-md bg-gradient-to-b p-6 no-underline outline-none focus:shadow-md"
-                    href="/keyboard"
+                    className="flex size-full select-none flex-col justify-end rounded-md bg-gradient-to-b from-muted/50 to-muted p-6 no-underline outline-none hover:bg-accent focus:shadow-md"
+                    href="/pcbs"
                   >
                     <Icons.logo className="size-6" />
                     <div className="mb-2 mt-4 text-lg font-medium">
                       Build your own
                     </div>
-                    <p className="text-muted-foreground text-sm leading-tight">
+                    <p className="text-sm leading-tight text-muted-foreground">
                       Maximize your experience
                     </p>
                   </a>
@@ -219,13 +219,13 @@ const ListItem = React.forwardRef<
         <a
           ref={ref}
           className={cn(
-            "hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors",
+            "block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground",
             className
           )}
           {...props}
         >
           <div className="text-sm font-medium leading-none">{title}</div>
-          <p className="text-muted-foreground line-clamp-2 text-sm leading-snug">
+          <p className="line-clamp-2 text-sm leading-snug text-muted-foreground">
             {children}
           </p>
         </a>
@@ -239,7 +239,7 @@ const SheetItem = ({ items }: { items: NavItem }) => {
   return (
     <>
       <Link href={items.href || '/'}>
-        <div className="focus-visible:ring-ring hover:bg-accent hover:text-accent-foreground inline-flex h-9 w-full items-center justify-start gap-2 whitespace-nowrap rounded-md px-4 py-2 text-sm font-medium transition-colors focus-visible:outline-none focus-visible:ring-1 disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0">
+        <div className="inline-flex h-9 w-full items-center justify-start gap-2 whitespace-nowrap rounded-md px-4 py-2 text-sm font-medium transition-colors hover:bg-accent hover:text-accent-foreground focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0">
           {items.title}
         </div>
       </Link>

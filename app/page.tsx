@@ -236,17 +236,17 @@ export default function IndexPage() {
 
   const features = [
     {
-      icon: <Keyboard className="h-10 w-10 text-primary" />,
+      icon: <Keyboard className="size-10 text-primary" />,
       title: "Premium Selection",
       description: "Curated collection of high-quality mechanical keyboards for every preference and budget."
     },
     {
-      icon: <Search className="h-10 w-10 text-primary" />,
+      icon: <Search className="size-10 text-primary" />,
       title: "Expert Advice",
       description: "Our team provides personalized recommendations to find your perfect keyboard match."
     },
     {
-      icon: <Users className="h-10 w-10 text-primary" />,
+      icon: <Users className="size-10 text-primary" />,
       title: "Community Support",
       description: "Join our community of keyboard enthusiasts for tips, tricks, and inspiration."
     }
@@ -307,7 +307,7 @@ export default function IndexPage() {
                   Contact Us
                 </Link>
               </motion.div>
-              <motion.div
+              {/* <motion.div
                 className="flex items-center gap-2 text-sm text-muted-foreground mt-4"
                 variants={itemVariants}
               >
@@ -315,7 +315,7 @@ export default function IndexPage() {
                   <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
                 </svg>
                 <span>Free shipping on orders over IDR 1,000,000</span>
-              </motion.div>
+              </motion.div> */}
             </motion.div>
             <motion.div
               className="relative"
@@ -343,7 +343,7 @@ export default function IndexPage() {
       </section>
 
       {/* Features Section */}
-      <section className="py-20 bg-background">
+      {/* <section className="py-20 bg-background">
         <motion.div
           className="container max-w-7xl mx-auto"
           initial="hidden"
@@ -376,7 +376,7 @@ export default function IndexPage() {
             ))}
           </motion.div>
         </motion.div>
-      </section>
+      </section> */}
 
       {/* Contact Section */}
       <section className="py-20 bg-muted/30">
