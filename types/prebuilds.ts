@@ -11,6 +11,7 @@ export interface Keyboard {
   type: string;
   product_link: string;
   detail_link: string;
+  product_image: string
   price: string;
   tags: Tag[];
 }

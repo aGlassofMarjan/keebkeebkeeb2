@@ -27,6 +27,7 @@ export const keyboardData: Keyboard[] = [
     detail_link: "/keyboards/cidoo-abm098",
     price: "2000000",
     tags: [gasketMount, triMode, qmkVia, PBTKeycaps, rotaryKnob],
+    product_image: "/cidoo-abm098/cidoo-abm098.jpg",
   },
   {
     name: "Weikav Lucky80",
@@ -37,6 +38,7 @@ export const keyboardData: Keyboard[] = [
     detail_link: "/keyboards/weikav-lucky80",
     price: "1300000",
     tags: [tenKeyLess, aluminium, qmkVia, triMode],
+    product_image: "/weikav-lucky80/weikav-lucky80-cover.jpg",
   },
   {
     name: "WOB Rainy75RT",
@@ -47,6 +49,8 @@ export const keyboardData: Keyboard[] = [
     detail_link: "/keyboards/wob-rainy75rt",
     price: "3015000",
     tags: [hallEffect, aluminium, triMode, PBTKeycaps, seventyFives],
+    product_image:
+      "https://www.nouvolo.com/cdn/shop/files/rainy75rt-grey-textured-mirror2.jpg?v=1737556274&width=1445",
   },
   {
     name: "WOB Rainy75",
@@ -57,6 +61,8 @@ export const keyboardData: Keyboard[] = [
     detail_link: "/keyboards/wob-rainy75",
     price: "2000000",
     tags: [aluminium, triMode, PBTKeycaps, seventyFives, gasketMount],
+    product_image:
+      "https://www.wobkey.com/cdn/shop/files/3500_LR75BK.jpg?v=1714454897",
   },
   {
     name: "Epomaker TH40",
@@ -67,6 +73,7 @@ export const keyboardData: Keyboard[] = [
     price: "1860000",
     tags: [ultraCompact, triMode, fortyPercent, qmkVia],
     detail_link: "/keyboards/epomaker-th40",
+    product_image: "/epomaker-th40/th40-head.png",
   },
   {
     name: "Epomaker Luma 84",
@@ -77,6 +84,7 @@ export const keyboardData: Keyboard[] = [
     price: "1999999",
     tags: [compact, triMode, qmkVia, eightyPercent],
     detail_link: "/keyboards/epomaker-luma84",
+    product_image: "/epomaker-luma84/luma-84-head.png",
   },
   {
     name: "VGN MADLIONS 68 PRO",
@@ -87,6 +95,8 @@ export const keyboardData: Keyboard[] = [
     price: "1520000",
     tags: [hallEffect, compact, aluminium],
     detail_link: "/keyboards/madlions-68pro",
+    product_image:
+      "https://www.dekada.com/en/images/madlions_mad_68_he_rgb_bk_04_9VY3ea.jpg",
   },
   {
     name: "VGN MADLIONS 68",
@@ -97,6 +107,8 @@ export const keyboardData: Keyboard[] = [
     price: "810000",
     tags: [hallEffect, compact],
     detail_link: "/keyboards/madlions-68",
+    product_image:
+      "https://diykeycap.com/cdn/shop/files/MAD68-HE.jpg?v=1732450045",
   },
   {
     name: "Epomaker TH85",
@@ -107,6 +119,8 @@ export const keyboardData: Keyboard[] = [
     price: "1650000",
     tags: [triMode, compact, gasketMount, eightyPercent, qmkVia],
     detail_link: "/keyboards/epomaker-th85",
+    product_image:
+      "https://epomaker.com/cdn/shop/files/IMG_8891.png?v=1746609196&width=990",
   },
   {
     name: "Epomaker Split 65",
@@ -117,6 +131,8 @@ export const keyboardData: Keyboard[] = [
     price: "1999999",
     tags: [triMode, compact, qmkVia, rotaryKnob, ergonomic],
     detail_link: "/keyboards/epomaker-split65",
+    product_image:
+      "https://epomaker.com/cdn/shop/files/IMG_4410.png?v=1746609558&width=1946",
   },
   {
     name: "Epomaker Alice 66",
@@ -135,6 +151,8 @@ export const keyboardData: Keyboard[] = [
       PBTKeycaps,
     ],
     detail_link: "/keyboards/epomaker-alice66",
+    product_image:
+      "https://epomaker.com/cdn/shop/files/IMG_4110.png?v=1746609639&width=1946",
   },
   {
     name: "Epomaker Tide Alice",
@@ -154,6 +172,8 @@ export const keyboardData: Keyboard[] = [
       PBTKeycaps,
     ],
     detail_link: "/keyboards/epomaker-tide-alice",
+    product_image:
+      "https://epomaker.com/cdn/shop/files/EPOMAKER_Tide_Alice_1.jpg?v=1746604907&width=990",
   },
   {
     name: "Epomaker Tide 49",
@@ -164,6 +184,8 @@ export const keyboardData: Keyboard[] = [
     price: "2380000",
     tags: [triMode, aluminium, gasketMount, ultraCompact, qmkVia, fortyPercent],
     detail_link: "/keyboards/epomaker-tide49",
+    product_image:
+      "https://epomaker.com/cdn/shop/files/EPOMAKERTide49_12.jpg?v=1746604982&width=1946",
   },
   {
     name: "MCHOSE Jet 75",
@@ -174,6 +196,8 @@ export const keyboardData: Keyboard[] = [
     price: "1499999",
     tags: [hallEffect, seventyFives, wired],
     detail_link: "/keyboards/mchose-jet75",
+    product_image:
+      "https://www.mchose.store/cdn/shop/files/BlackTopographic_6090649c-71bf-4927-8155-d5a2cf840401.jpg?v=1739881275&width=1000",
   },
   {
     name: "Epomaker P87",
@@ -184,5 +208,6 @@ export const keyboardData: Keyboard[] = [
     price: "2050000",
     tags: [aluminium, tenKeyLess, qmkVia, triMode, rotaryKnob],
     detail_link: "/keyboards/epomaker-p87",
+    product_image: "/epomaker-p87/epo87-head.png",
   },
 ]
