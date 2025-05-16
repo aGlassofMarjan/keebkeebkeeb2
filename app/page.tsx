@@ -422,7 +422,7 @@ export default function IndexPage() {
                   <div className="flex items-center gap-2">
                     <Image src="/whatsapp.png" alt="WhatsApp" width={24} height={24} />
                     <span>Chat on WhatsApp</span>
-                    <ArrowRight className="ml-1 h-4 w-4 transition-transform group-hover:translate-x-1" />
+                    <ArrowRight className="ml-1 size-4 transition-transform group-hover:translate-x-1" />
                   </div>
                 </Link>
               </motion.div>
@@ -431,17 +431,17 @@ export default function IndexPage() {
                 variants={containerVariants}
               >
                 <motion.div
-                  className="bg-background rounded-lg p-4 border"
+                  className="rounded-lg border bg-background p-4"
                   variants={itemVariants}
                 >
-                  <p className="text-sm font-medium mb-1">Response Time</p>
+                  <p className="mb-1 text-sm font-medium">Response Time</p>
                   <p className="text-2xl font-bold">Under 2 Hours</p>
                 </motion.div>
                 <motion.div
-                  className="bg-background rounded-lg p-4 border"
+                  className="rounded-lg border bg-background p-4"
                   variants={itemVariants}
                 >
-                  <p className="text-sm font-medium mb-1">Customer Satisfaction</p>
+                  <p className="mb-1 text-sm font-medium">Customer Satisfaction</p>
                   <p className="text-2xl font-bold">98%</p>
                 </motion.div>
               </motion.div>
@@ -451,20 +451,20 @@ export default function IndexPage() {
       </section>
 
       {/* CTA Section */}
-      <section className="py-16 bg-primary/5">
+      <section className="bg-primary/5 py-16">
         <motion.div
-          className="container max-w-7xl mx-auto"
+          className="container mx-auto max-w-7xl"
           initial="hidden"
           animate={isVisible ? "visible" : "hidden"}
           variants={containerVariants}
         >
           <motion.div
-            className="bg-gradient-to-r from-primary/80 to-primary rounded-2xl p-8 md:p-12 shadow-xl text-primary-foreground"
+            className="rounded-2xl bg-gradient-to-r from-primary/80 to-primary p-8 text-primary-foreground shadow-xl md:p-12"
             variants={itemVariants}
           >
-            <div className="max-w-3xl mx-auto text-center">
-              <h2 className="text-3xl font-bold mb-4">Ready to Elevate Your Typing Experience?</h2>
-              <p className="text-xl opacity-90 mb-8">
+            <div className="mx-auto max-w-3xl text-center">
+              <h2 className="mb-4 text-3xl font-bold">Ready to Elevate Your Typing Experience?</h2>
+              <p className="mb-8 text-xl opacity-90">
                 Browse our collection of premium mechanical keyboards and find your perfect match today.
               </p>
               <div className="flex flex-wrap justify-center gap-4">
@@ -473,16 +473,16 @@ export default function IndexPage() {
                   className={cn(buttonVariants({ variant: "secondary", size: "lg" }), "group")}
                 >
                   Explore Keyboards
-                  <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
+                  <ArrowRight className="ml-2 size-4 transition-transform group-hover:translate-x-1" />
                 </Link>
                 <Link
-                  href={`https://wa.me/6281237918877?text=Hello,%20I'm%20interested%20in%20your%20keyboards`}
+                  href={`https://www.tokopedia.com/jigoh-store`}
                   target="_blank"
                   rel="noreferrer"
                   className={cn(buttonVariants({ variant: "outline", size: "lg" }))}
                 >
-                  <MessageSquarePlus className="mr-2 h-4 w-4" />
-                  Get Personalized Advice
+                  <MessageSquarePlus className="mr-2 size-4" />
+                  Go to Store
                 </Link>
               </div>
             </div>
