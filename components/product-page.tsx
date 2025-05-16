@@ -11,16 +11,16 @@ import Link from 'next/link';
 const ProductPage = ({ title, product_link, description, imageUrl, list_feature, segment } : Data) => {
   const [isVisible, setIsVisible] = useState(false);
   const router = useRouter()
-  
+
   useEffect(() => {
     setIsVisible(true);
   }, []);
 
   const containerVariants = {
     hidden: { opacity: 0 },
-    visible: { 
+    visible: {
       opacity: 1,
-      transition: { 
+      transition: {
         duration: 0.35,
         when: "beforeChildren",
         staggerChildren: 0.2
@@ -30,12 +30,12 @@ const ProductPage = ({ title, product_link, description, imageUrl, list_feature,
 
   const itemVariants = {
     hidden: { opacity: 0, y: 20 },
-    visible: { 
-      opacity: 1, 
+    visible: {
+      opacity: 1,
       y: 0,
-      transition: { 
+      transition: {
         duration: 0.35,
-        ease: "easeOut" 
+        ease: "easeOut"
       }
     }
   };
@@ -45,34 +45,34 @@ const ProductPage = ({ title, product_link, description, imageUrl, list_feature,
   }
 
   return (
-    <motion.div 
+    <motion.div
       className="relative flex size-full items-center justify-center"
       initial="hidden"
       animate={isVisible ? "visible" : "hidden"}
       variants={containerVariants}
     >
-      <motion.div 
+      <motion.div
         className="w-full rounded-3xl p-8"
         variants={containerVariants}
       >
         <div className="flex flex-col gap-8 md:flex-row">
-          <motion.div 
-            className="bg-secondary flex h-96 flex-1 items-center justify-center overflow-hidden rounded-2xl"
+          <motion.div
+            className="flex h-96 flex-1 items-center justify-center overflow-hidden rounded-2xl bg-secondary"
             variants={itemVariants}
           >
             <Image src={imageUrl} alt={'Product image'} width={1400} height={1100}/>
           </motion.div>
-          
+
           <div className="flex flex-1 flex-col justify-between">
-            <motion.h2 
+            <motion.h2
               className="mb-4 text-4xl font-bold"
               variants={itemVariants}
             >
               {title}
             </motion.h2>
-            
+
             <motion.h2 variants={itemVariants} className="mb-4 font-light">{description}</motion.h2>
-            
+
             <motion.div
               className="mb-6"
               variants={itemVariants}
@@ -91,7 +91,7 @@ const ProductPage = ({ title, product_link, description, imageUrl, list_feature,
           </div>
         </div>
 
-        
+
 
         {segment && (
           <motion.div
@@ -100,10 +100,12 @@ const ProductPage = ({ title, product_link, description, imageUrl, list_feature,
           >
             {segment.map((seg) => (
               <div className='space-y-4 px-12 py-6'>
-                {seg.image && (
-                  <div className='flex h-96 flex-1 items-center justify-center overflow-hidden rounded-2xl'>
-                    <Image src={seg.image} alt={'Segment Image'} width={1400} height={1100}/>
+                {seg.image ? (
+                  <div className='flex h-96 flex-1 items-center justify-center overflow-hidden rounded-2xl max-sm:h-40'>
+                    <Image src={seg.image} alt={'Image'} width={1400} height={1100}/>
                   </div>
+                ) : (
+                  <div></div>
                 )}
                 <p className='pt-4 font-mono text-lg'>{seg.title}</p>
                 <p className="">
@@ -111,10 +113,10 @@ const ProductPage = ({ title, product_link, description, imageUrl, list_feature,
                 </p>
               </div>
             ))}
-            
+
           </motion.div>
         )}
-        
+
       </motion.div>
     </motion.div>
   )

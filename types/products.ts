@@ -4,11 +4,11 @@ export interface Data {
   product_link: string
   description: string
   list_feature: string[]
-  segment: Segment[]
+  segment?: Segment[]
 }
 
 interface Segment {
   title: string
   description: string
-  image?: string 
+  image?: string
 }
