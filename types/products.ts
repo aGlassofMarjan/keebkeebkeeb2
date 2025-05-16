@@ -1,5 +1,5 @@
 export interface Data {
-  imageUrl: string
+  image_url: string
   title: string
   product_link: string
   description: string

@@ -20,9 +20,9 @@ import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from "@/comp
 
 
 
-const ProductPage = ({ title, product_link, description, imageUrl, list_feature, segment }: Data) => {
+const ProductPage = ({ title, product_link, description, image_url, list_feature, segment }: Data) => {
   const [isVisible, setIsVisible] = useState(false);
-  const [activeImage, setActiveImage] = useState(imageUrl);
+  const [activeImage, setActiveImage] = useState(image_url);
   const router = useRouter();
 
   useEffect(() => {
@@ -35,7 +35,7 @@ const ProductPage = ({ title, product_link, description, imageUrl, list_feature,
     : [];
 
   // Combine main image with additional images
-  const allImages = [imageUrl, ...additionalImages];
+  const allImages = [image_url, ...additionalImages];
 
   const containerVariants = {
     hidden: { opacity: 0 },
