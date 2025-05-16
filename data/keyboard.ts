@@ -43,7 +43,7 @@ export const keyboardData: Keyboard[] = [
     manufacturer: "WOB",
     type: "Prebuilt",
     product_link:
-      "https://www.tokopedia.com/jigoh-store/epomaker-th-40-mechanical-keyboard-gaming-1731365832973977117?extParam=src%3Dshop%26whid%3D18606105&aff_unique_id=&channel=others&chain_key=",
+      "https://www.tokopedia.com/jigoh-store/wob-rainy75rt-gaming-magnetic-shaft-keyboard-mechanical-cnc-aluminum-alloy-game-dedicated-rain-75rt-fearless-contract-1731301220135634461?t_id=1747375944769&t_st=1&t_pp=product_detail&t_efo=horizontal_goods_card&t_ef=&t_sm=rec_product_detail_outer_pdp_1_module&t_spt=product_detail",
     detail_link: "/keyboards/wob-rainy75rt",
     price: "3015000",
     tags: [hallEffect, aluminium, triMode, PBTKeycaps, seventyFives],
@@ -160,7 +160,7 @@ export const keyboardData: Keyboard[] = [
     manufacturer: "Epomaker",
     type: "Prebuilt",
     product_link:
-      "https://www.tokopedia.com/jigoh-store/epomaker-split-65-mechanical-keyboard-gaming-1731366049614693917?extParam=src%3Dshop%26whid%3D18606105&aff_unique_id=&channel=others&chain_key=",
+      "https://www.tokopedia.com/jigoh-store/epomaker-tide-49-mechanical-keyboard-gaming-40-customized-1731356807182517789?extParam=whid%3D18606105&aff_unique_id=&channel=others&chain_key=",
     price: "2380000",
     tags: [triMode, aluminium, gasketMount, ultraCompact, qmkVia, fortyPercent],
     detail_link: "/keyboards/epomaker-tide49",

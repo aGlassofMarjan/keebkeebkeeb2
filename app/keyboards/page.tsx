@@ -1,25 +1,27 @@
-'use client'
+'use client';
 
 import React, { useState } from 'react';
-import { Input } from "@/components/ui/input";
+import { useRouter } from 'next/navigation';
+import { keyboardData } from '@/data/keyboard';
+import { ChevronLeft, ChevronRight, ExternalLink, Info } from 'lucide-react';
+
+
+
+import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardFooter, CardHeader, CardTitle } from "@/components/ui/card";
-import { Badge } from "@/components/ui/badge";
-import { ChevronLeft, ChevronRight, ExternalLink, Info } from 'lucide-react';
-import {
-  Sheet,
-  SheetContent,
-  SheetDescription,
-  SheetHeader,
-  SheetTitle,
-  SheetTrigger,
-} from "@/components/ui/sheet"
-import { keyboardData } from '@/data/keyboard'
-import { useRouter } from 'next/navigation';
+import { Input } from "@/components/ui/input";
+import { Sheet, SheetContent, SheetDescription, SheetHeader, SheetTitle, SheetTrigger } from "@/components/ui/sheet";
+
+
+
 
 
 const KeyboardPage: React.FC = () => {
-  // Extract unique tag names for filter options
+  const allManufacturers: string[] = Array.from(
+    new Set(keyboardData.map((item) => item.manufacturer))
+  )
+
   const allTags: string[] = Array.from(
     new Set(keyboardData.flatMap(item => item.tags.map(tag => tag.name)))
   );
@@ -27,17 +29,20 @@ const KeyboardPage: React.FC = () => {
   const allTypes: string[] = Array.from(
     new Set(keyboardData.map(item => item.type))
   );
-  
+
   // State for filters
   const [searchTerm, setSearchTerm] = useState<string>('');
   const [selectedTags, setSelectedTags] = useState<string[]>([]);
   const [selectedTypes, setSelectedTypes] = useState<string[]>([]);
+  const [selectedManufacturers, setSelectedManufacturers] = useState<string[]>(
+    []
+  )
   const router = useRouter()
-  
+
   // Pagination state
   const [currentPage, setCurrentPage] = useState<number>(1);
-  const itemsPerPage = 6;
-  
+  const itemsPerPage = 9;
+
   // Handle tag selection/deselection
   const handleTagToggle = (tagName: string): void => {
     if (selectedTags.includes(tagName)) {
@@ -59,22 +64,38 @@ const KeyboardPage: React.FC = () => {
     // Reset to first page when filters change
     setCurrentPage(1);
   };
-  
+
+  const handleManufacturerToggle = (manufacturer: string): void => {
+    if (selectedManufacturers.includes(manufacturer)) {
+      setSelectedManufacturers(
+        selectedManufacturers.filter((m) => m !== manufacturer)
+      )
+    } else {
+      setSelectedManufacturers([...selectedManufacturers, manufacturer])
+    }
+    // Reset to first page when filters change
+    setCurrentPage(1)
+  }
+
   // Filter data based on search term and selected tags
   const filteredData = keyboardData.filter(keyboard => {
     // Filter by search term (case insensitive)
     const nameMatch = keyboard.name.toLowerCase().includes(searchTerm.toLowerCase());
-    
+
     // Filter by tags (if any are selected)
-    const tagMatch = selectedTags.length === 0 || 
+    const tagMatch = selectedTags.length === 0 ||
       keyboard.tags.some(tag => selectedTags.includes(tag.name));
 
     const typeMatch = selectedTypes.length === 0 ||
       selectedTypes.includes(keyboard.type);
-    
-    return nameMatch && tagMatch && typeMatch;
+
+      const manufacturerMatch =
+        selectedManufacturers.length === 0 ||
+        selectedManufacturers.includes(keyboard.manufacturer)
+
+    return nameMatch && tagMatch && typeMatch && manufacturerMatch;
   });
-  
+
   // Paginate data
   const totalPages = Math.ceil(filteredData.length / itemsPerPage);
   const paginatedData = filteredData.slice(
@@ -114,8 +135,8 @@ const KeyboardPage: React.FC = () => {
               <SheetHeader>
                 <SheetTitle>Filter</SheetTitle>
                 <SheetDescription>
-                  <Input 
-                    placeholder="Search..." 
+                  <Input
+                    placeholder="Search..."
                     value={searchTerm}
                     onChange={(e) => {
                       setSearchTerm(e.target.value);
@@ -140,9 +161,25 @@ const KeyboardPage: React.FC = () => {
                     </div>
                   </div>
 
+                  <div className="mb-6">
+                    <h3 className="text-md mb-3 font-medium">Manufacturer</h3>
+                    <div className="h-40 space-y-2 overflow-auto">
+                      {allManufacturers.map(manufacturer => (
+                        <Button
+                          key={manufacturer}
+                          variant={selectedManufacturers.includes(manufacturer) ? "default" : "outline"}
+                          onClick={() => handleManufacturerToggle(manufacturer)}
+                          className="w-full justify-start"
+                        >
+                          {manufacturer}
+                        </Button>
+                      ))}
+                    </div>
+                  </div>
+
                   <div>
                     <h3 className="text-md mb-3 font-medium">Tags</h3>
-                    <div className="space-y-2">
+                    <div className="h-56 space-y-2 overflow-auto">
                       {allTags.map(tag => (
                         <Button
                           key={tag}
@@ -161,14 +198,14 @@ const KeyboardPage: React.FC = () => {
           </Sheet>
         </div>
       </div>
-      
+
       <div className="grid grid-cols-1 gap-6 md:grid-cols-4">
         {/* Filter sidebar */}
         <div className="space-y-6 rounded-lg border p-6 max-md:hidden">
           <div>
             <h2 className="mb-4 text-lg font-medium">Filter</h2>
-            <Input 
-              placeholder="Search..." 
+            <Input
+              placeholder="Search..."
               value={searchTerm}
               onChange={(e) => {
                 setSearchTerm(e.target.value);
@@ -176,6 +213,22 @@ const KeyboardPage: React.FC = () => {
               }}
               className="mb-6"
             />
+          </div>
+
+          <div className="mb-6">
+            <h3 className="text-md mb-3 font-medium">Manufacturer</h3>
+            <div className="space-y-2">
+              {allManufacturers.map(manufacturer => (
+                <Button
+                  key={manufacturer}
+                  variant={selectedManufacturers.includes(manufacturer) ? "default" : "outline"}
+                  onClick={() => handleManufacturerToggle(manufacturer)}
+                  className="w-full justify-start"
+                >
+                  {manufacturer}
+                </Button>
+              ))}
+            </div>
           </div>
 
           <div className="mb-6">
@@ -193,7 +246,7 @@ const KeyboardPage: React.FC = () => {
               ))}
             </div>
           </div>
-          
+
           <div>
             <h3 className="text-md mb-3 font-medium">Tags</h3>
             <div className="space-y-2">
@@ -210,7 +263,7 @@ const KeyboardPage: React.FC = () => {
             </div>
           </div>
         </div>
-        
+
         {/* Card grid */}
         <div className="flex min-h-[70vh] flex-col md:col-span-3">
           <div className="grow">
@@ -256,7 +309,7 @@ const KeyboardPage: React.FC = () => {
                       </div>
                     </CardContent>
                     <CardFooter className='flex-col gap-3'>
-                      <Button 
+                      <Button
                         variant="default"
                         className="w-full"
                         onClick={() => router.push(keyboard.detail_link)}
@@ -265,7 +318,7 @@ const KeyboardPage: React.FC = () => {
                         Detail
                       </Button>
 
-                      <Button 
+                      <Button
                         variant="outline"
                         className="w-full"
                         onClick={() => window.open(keyboard.product_link, '_blank')}
@@ -283,7 +336,7 @@ const KeyboardPage: React.FC = () => {
               </div>
             )}
           </div>
-          
+
           {/* Pagination controls - always at bottom */}
           {filteredData.length > 0 && (
             <div className="mt-auto flex items-center justify-end gap-2 pt-4">
