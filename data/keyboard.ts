@@ -161,7 +161,7 @@ export const keyboardData: Keyboard[] = [
     type: "Prebuilt",
     product_link:
       "https://www.tokopedia.com/jigoh-store/epomaker-split-65-mechanical-keyboard-gaming-1731366049614693917?extParam=src%3Dshop%26whid%3D18606105&aff_unique_id=&channel=others&chain_key=",
-    price: "1999999",
+    price: "2380000",
     tags: [triMode, aluminium, gasketMount, ultraCompact, qmkVia, fortyPercent],
     detail_link: "/keyboards/epomaker-tide49",
   },
