@@ -23,7 +23,8 @@ export const siteConfig = {
     },
   ],
   links: {
-    whatsapp: "https://twitter.com/shadcn",
+    whatsapp:
+      "https://wa.me/6281237918877?text=Hello,%20I'm%20interested%20in%20your%20keyboards",
     github: "https://github.com/shadcn/ui",
     docs: "/keyboards",
   },
