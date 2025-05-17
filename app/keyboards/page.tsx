@@ -102,10 +102,12 @@ const KeyboardPage: React.FC = () => {
       .toLowerCase()
       .includes(searchTerm.toLowerCase())
 
-    // Filter by tags (if any are selected)
+    // Filter by tags (if any are selected) - AND logic
     const tagMatch =
       selectedTags.length === 0 ||
-      keyboard.tags.some((tag) => selectedTags.includes(tag.name))
+      selectedTags.every((selectedTag) =>
+        keyboard.tags.some((tag) => tag.name === selectedTag)
+      )
 
     const typeMatch =
       selectedTypes.length === 0 || selectedTypes.includes(keyboard.type)
