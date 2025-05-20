@@ -7,7 +7,7 @@ import ProductPage from "@/components/product-page"
 export default function ProductCard() {
   return (
     <ProductPage
-      imageUrl={data.image_url}
+      image_url={data.image_url}
       title={data.title}
       description={data.description}
       list_feature={data.list_feature}
